@@ -15,7 +15,7 @@
      --banner-title-color: #1a1a1a;
    
      /* 2. Estilos Estructurales */
-     font-family: $font-primary;
+     $font-primary: 'Montserrat', system-ui, -apple-system, sans-serif;
      display: flex;
      align-items: center;
      justify-content: space-between;
