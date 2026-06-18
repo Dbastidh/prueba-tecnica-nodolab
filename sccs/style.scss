@@ -1,104 +1,103 @@
 /* =========================================
    VARIABLES GLOBALES
    ========================================= */
-   $breakpoint-mobile: 768px;
-   $font-primary: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-   
-   /* =========================================
-      BLOQUE PRINCIPAL: .nodolab-banner
-      ========================================= */
-   .nodolab-banner {
-     /* 1. Definición de Variables CSS por defecto */
-     --banner-bg-color: #f4f5fb;
-     --banner-bg-pattern: none;
-     --banner-text-color: #555555;
-     --banner-title-color: #1a1a1a;
-   
-     /* 2. Estilos Estructurales */
-     $font-primary: 'Montserrat', system-ui, -apple-system, sans-serif;
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     gap: 2rem;
-     padding: 3rem;
-     border-radius: 16px;
-     overflow: hidden;
-   
-    /* 3. Aplicación de variables al contenedor */
+$breakpoint-mobile: 768px;
+$font-primary: 'Montserrat', system-ui, -apple-system, sans-serif;
+
+/* =========================================
+   BLOQUE PRINCIPAL: .nodolab-banner
+   ========================================= */
+.nodolab-banner {
+  /* 1. Definición de Variables CSS por defecto */
+  --banner-bg-color: #f4f5fb;
+  --banner-bg-pattern: none;
+  --banner-text-color: #555555;
+  --banner-title-color: #1a1a1a;
+
+  /* 2. Estilos Estructurales */
+  font-family: $font-primary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem;
+  border-radius: 16px;
+  overflow: hidden;
+
+  /* 3. Aplicación de variables al contenedor */
   background: var(--banner-bg-pattern) right center / auto 100% no-repeat,
-  linear-gradient(90deg, var(--bg-grad-start) 0%, var(--bg-grad-end) 100%);
+              linear-gradient(90deg, var(--bg-grad-start) 0%, var(--bg-grad-end) 100%);
 
+  /* Responsive básico */
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
 
-     /* Responsive básico */
-     @media (max-width: $breakpoint-mobile) {
-       flex-direction: column;
-       text-align: center;
-       padding: 2rem 1.5rem;
-     }
-   
-     /* =========================================
-        ELEMENTOS INTERNOS
-        ========================================= */
-     &__content {
-       flex: 1;
-       max-width: 60%;
-   
-       @media (max-width: $breakpoint-mobile) {
-         max-width: 100%;
-       }
-   
-       h1, h2, h3, h4, h5, h6 {
-         color: var(--banner-title-color);
-         font-weight: 700;
-         margin-top: 0;
-         margin-bottom: 1rem;
-       }
-   
-       p {
-         color: var(--banner-text-color);
-         line-height: 1.6;
-         margin-bottom: 1rem;
-   
-         &:last-child {
-           margin-bottom: 0;
-         }
-       }
-     }
-   
-     &__media {
-       flex: 0 0 35%;
-       display: flex;
-       justify-content: center;
-   
-       @media (max-width: $breakpoint-mobile) {
-         flex: 0 0 auto;
-         width: 100%;
-         margin-top: 2rem;
-       }
-   
-       img {
-         max-width: 100%;
-         height: auto;
-         display: block;
-       }
-     }
-   
-     /* =========================================
-        MODIFICADORES DE TEMA
-        ========================================= */
-     &--theme-purple {
-       --bg-grad-start: #E9EAFF; 
-       --bg-grad-end: #FCFDFF;   
-       --banner-title-color: #2D2B3F; 
-       --banner-text-color: #6C6A80;  
-       --banner-bg-pattern: url('../assets/img/fondo-ondas.svg');
-     }
-   
-     &--theme-teal {
-       --bg-grad-start: #F5F7FB; 
-       --bg-grad-end: #E9F4F6;   
-       --banner-title-color: #1A3032; 
-       --banner-text-color: #5D7274;  
-       --banner-bg-pattern: url('../assets/img/fondo-figuras.svg');
-     }
-   }
+  /* =========================================
+     ELEMENTOS INTERNOS
+     ========================================= */
+  &__content {
+    flex: 1;
+    max-width: 60%;
+
+    @media (max-width: $breakpoint-mobile) {
+      max-width: 100%;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--banner-title-color);
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--banner-text-color);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__media {
+    flex: 0 0 35%;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex: 0 0 auto;
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  /* =========================================
+     MODIFICADORES DE TEMA
+     ========================================= */
+  &--theme-purple {
+    --bg-grad-start: #E9EAFF; 
+    --bg-grad-end: #FCFDFF;   
+    --banner-title-color: #2D2B3F; 
+    --banner-text-color: #6C6A80;  
+    --banner-bg-pattern: url('../assets/img/fondo-ondas.svg');
+  }
+
+  &--theme-teal {
+    --bg-grad-start: #F5F7FB; 
+    --bg-grad-end: #E9F4F6;   
+    --banner-title-color: #1A3032; 
+    --banner-text-color: #5D7274;  
+    --banner-bg-pattern: url('../assets/img/fondo-figuras.svg');
+  }
+}
